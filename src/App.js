@@ -1,9 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {createStore} from 'redux';
+import {Provider} from 'react-redux';
+import rootReducer from './store/reducers';
+
+const store = createStore(rootReducer)
 
 function App() {
-  return 
+  return (
+    <Provider store={store}>
+      
+    </Provider>
+  )
 }
 
 export default App;
