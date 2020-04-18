@@ -1,3 +1,11 @@
-import {combineReducers} from 'redux';
+import {combineReducers, createStore} from 'redux';
+import { listReducer } from './TodosList/reducers';
+import middleware from './middleware';
+import {reducer as formReducer} from 'redux-form';
 
-export default combineReducers({});
+const reducer = combineReducers({
+    todosList: listReducer,
+    form: formReducer
+});
+
+export default createStore(reducer, middleware);

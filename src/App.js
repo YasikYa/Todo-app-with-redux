@@ -1,15 +1,15 @@
 import React from 'react';
 import './App.css';
-import {createStore} from 'redux';
 import {Provider} from 'react-redux';
-import rootReducer from './store/reducers';
-
-const store = createStore(rootReducer)
+import TodoListContainer from './components/TodosList/TodosListContainer';
+import TodoForm from './components/TodoForm/TodoForm';
+import store from './store/reducers';
 
 function App() {
   return (
     <Provider store={store}>
-      
+      <TodoForm/>
+      <TodoListContainer/>
     </Provider>
   )
 }
